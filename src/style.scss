@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+:root {
+    --primary: #6ac890;
+    --grey: #8a8686;
+    --border: #ebebeb;
+    --font: #1d1f20;
+    --duration: 0.2s;
+}
+
+.container {
+    margin: 2rem auto;
+    background: #fff;
+    width: 530px;
+    padding: 1.5rem 0;
+    border-radius: 5px;
+    text-align: center;
+
+    h2 {
+        margin: 0 0 1rem;
+    }
+}
+.field {
+    margin: 0 auto 20px;
+    max-width: 460px;
+    position: relative;
+}
+
+input {
+    position: relative;
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%;
+    padding: 16px 2px;
+    font-weight: 400;
+    outline: none;
+    transition: all var(--duration) ease-in-out;
+    border: none;
+    border-bottom: 2px solid var(--border);
+    border-radius: 0;
+
+    &::placeholder {
+        color: var(--grey);
+    }
+
+    &::selection {
+        background: white;
+    }
+
+    &:not(:placeholder-shown) {
+        padding: 22px 0 10px 2px;
+
+        ~ label span {
+            opacity: 1;
+            transform: translateY(-16px);
+            transition: transform 0.3s ease-out, opacity 0.4s ease-out;
+            transition-delay: calc((var(--index)) * 0.04s);
+        }
+
+        ~ .border {
+            transform: scaleX(1);
+        }
+    }
+}
+
+label {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 1px;
+    color: #6ac890;
+}
+
+span {
+    display: inline-block;
+    opacity: 0;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.border {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    border-bottom: 2px solid var(--primary);
+    transition: transform var(--duration) ease-out;
+    transform-origin: left;
+}
+
+.submit {
+    padding: 8px 16px;
+    font-family: inherit;
+    border: none;
+    background: var(--primary);
+    border-radius: 5px;
+    font-size: 1.125rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: var(--duration);
+
+    &:is(:hover, :focus) {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #8dd09c;
+    color: var(--font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

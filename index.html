@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <form class="container">
+        <h2>Please enter your details</h2>
+        <div class="field">
+            <input type="text" id="name" placeholder='Name'/>
+            <label data-split for="name">Name:</label>
+            <div class="border"></div>
+        </div>
+
+        <div class="field">
+            <input type="email" id="email" placeholder='Company'/>
+            <label data-split for="email">Company:</label>
+            <div class="border"></div>
+        </div>
+
+        <br>
+        <button class="submit">Submit</button>
+      </form>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
